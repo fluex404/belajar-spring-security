@@ -23,7 +23,7 @@ public class UserController {
         return ResponseEntity.ok(userService.register(dto));
     }
 
-    @GetMapping("/remove-session")
+    @GetMapping("/context")
     public ResponseEntity removeSession(){
         SecurityContext securityContext = SecurityContextHolder.getContext();
         return ResponseEntity.ok(securityContext);

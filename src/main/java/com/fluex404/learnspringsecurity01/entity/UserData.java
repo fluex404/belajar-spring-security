@@ -12,7 +12,7 @@ import java.util.List;
 @Table(name = "userdata")
 @NoArgsConstructor
 public class UserData extends BaseEntity {
-    @Column(name = "username")
+    @Column(name = "username", unique = true)
     private String username;
     @Column(name = "password")
     private String password;
