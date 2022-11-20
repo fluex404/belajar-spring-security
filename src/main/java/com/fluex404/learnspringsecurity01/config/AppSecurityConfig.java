@@ -14,6 +14,9 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.authentication.logout.CookieClearingLogoutHandler;
+
+import javax.servlet.http.Cookie;
 
 @Configuration
 @EnableWebSecurity
@@ -26,19 +29,16 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/api/v1/admin").hasAnyRole("ADMIN")
                 .antMatchers("/api/v1/user").hasAnyRole("USER", "ADMIN")
                 .anyRequest().permitAll()
                 .and().csrf().disable()
                 .formLogin().disable()
-                .httpBasic()
-                .and()
-                .logout(logout -> logout
-                        .deleteCookies("JSESSIONID")
-                )
+                .httpBasic().and()
+                .logout().deleteCookies("JSESSIONID").and()
                 .sessionManagement()
-                .sessionFixation().changeSessionId()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 //                .invalidSessionUrl("/")
                 .maximumSessions(1)
