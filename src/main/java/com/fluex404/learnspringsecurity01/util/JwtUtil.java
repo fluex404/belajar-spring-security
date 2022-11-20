@@ -15,7 +15,7 @@ import java.util.Map;
 @Component
 @NoArgsConstructor
 public class JwtUtil {
-    private String secretKey = "iniSecret@,!";
+    private String secretKey = "6uTMadjkpt3UAk9V";
     private int expirationMs = 300000;
 
     public String extractUsername(String token){
