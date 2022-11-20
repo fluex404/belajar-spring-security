@@ -44,6 +44,7 @@ public class JwtUtil {
 
     public String generateToken(UserDetails userDetails) {
         Map<String, Object> map = new HashMap<>();
+        map.put("kuda", "kuda1");
         String token = createToken(map, userDetails.getUsername());
         userDataRepository.updateTokenByUsername(token, userDetails.getUsername());
         return token;
