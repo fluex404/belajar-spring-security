@@ -21,30 +21,41 @@ class LearnSpringSecurity01ApplicationTests {
 	@Autowired
 	private MyUserDetailsService myUserDetailsService;
 
-    @Test
-    void ngetestJwtUtils() {
-		System.out.println("TEST JWT");
+//    @Test
+//    void ngetestJwtUtils() {
+//		System.out.println("TEST JWT");
+//
+//		MyUserDetails user = new MyUserDetails("user1", "password1", true,
+//				Arrays.asList("ROLE_USER", "ROLE_ADMIN"));
+//
+//		String jwtToken = jwtUtil.generateToken(user);
+//		System.out.println(jwtToken);
+//		System.out.println(jwtUtil.extractExpiration(jwtToken));
+//		System.out.println(jwtUtil.extractUsername(jwtToken));
+//		System.out.println(jwtUtil.validateToken(jwtToken, user));
+//	}
 
-		MyUserDetails user = new MyUserDetails("user1", "password1", true,
-				Arrays.asList("ROLE_USER", "ROLE_ADMIN"));
+//	@Test
+//	void ngeTestTokenJwt(){
+//		String jwtToken = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImV4cCI6MTY2ODg2MTY4MCwiaWF0IjoxNjY4ODYxMzgwfQ.GsJLkReGbGyt4PacFyI0gSF1HBQwVJg6JBSgWziIH85x_1xejsV78AxGzWxyjhMK6GdCR0SKQR60eouIL20i_A";
+//		String username = jwtUtil.extractUsername(jwtToken);
+//		Date expiredDate = jwtUtil.extractExpiration(jwtToken);
+//		UserDetails userDetails = myUserDetailsService.loadUserByUsername(username);
+//
+//		System.out.println(username);
+//		System.out.println(expiredDate);
+//		System.out.println(jwtUtil.validateToken(jwtToken, userDetails));
+//	}
 
-		String jwtToken = jwtUtil.generateToken(user);
-		System.out.println(jwtToken);
-		System.out.println(jwtUtil.extractExpiration(jwtToken));
-		System.out.println(jwtUtil.extractUsername(jwtToken));
-		System.out.println(jwtUtil.validateToken(jwtToken, user));
-	}
-
-	@Test
-	void ngeTestTokenJwt(){
-		String jwtToken = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImV4cCI6MTY2ODg2MTY4MCwiaWF0IjoxNjY4ODYxMzgwfQ.GsJLkReGbGyt4PacFyI0gSF1HBQwVJg6JBSgWziIH85x_1xejsV78AxGzWxyjhMK6GdCR0SKQR60eouIL20i_A";
-		String username = jwtUtil.extractUsername(jwtToken);
-		Date expiredDate = jwtUtil.extractExpiration(jwtToken);
-		UserDetails userDetails = myUserDetailsService.loadUserByUsername(username);
-
-		System.out.println(username);
-		System.out.println(expiredDate);
-		System.out.println(jwtUtil.validateToken(jwtToken, userDetails));
-	}
+//	@Test
+//	void ngetestJwtUtilWithDbs(){
+//		String username = "user1"
+//		Date expiredDate = jwtUtil.extractExpiration(jwtToken);
+//		UserDetails userDetails = myUserDetailsService.loadUserByUsername(username);
+//
+//		System.out.println(username);
+//		System.out.println(expiredDate);
+//		System.out.println(jwtUtil.validateToken(jwtToken, userDetails));
+//	}
 
 }

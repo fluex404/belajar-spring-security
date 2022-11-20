@@ -18,6 +18,8 @@ public class UserData extends BaseEntity {
     private String password;
     @Column(name = "enabled")
     private Boolean enabled;
+    @Column(name = "token")
+    private String token;
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private List<UserRole> userRoles = new ArrayList<>();
 }
